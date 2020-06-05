@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 
-import HTSeq
+import os
+import sys
 import operator
+import HTSeq
 
 def gtf_to_transcript_exons(gtf, transcript_type):
     """
