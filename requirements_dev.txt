@@ -1,0 +1,3 @@
+htseq>=0.11
+pytest
+pytest-console-scripts
