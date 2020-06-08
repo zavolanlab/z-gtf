@@ -20,7 +20,7 @@ jobs:
           tag=${GITHUB_REF##*/}
           tag="${tag:1}"
           docker build -t zavolab/${repo_name}:latest .
-          docker tag zavolab/${repo_name} zavolab/${repo_name}:${IMAGE_TAG}
+          docker tag zavolab/${repo_name} zavolab/${repo_name}:${tag}
           echo $docker_password | docker login -u $docker_username --password-stdin
           docker push zavolab/${repo_name}:latest
-          docker push zavolab/${repo_name}:${IMAGE_TAG}
+          docker push zavolab/${repo_name}:${tag}
