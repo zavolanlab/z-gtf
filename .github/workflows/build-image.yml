@@ -16,6 +16,6 @@ jobs:
           repo_name=$(cut -f 2 -d "/" <(echo ${{ github.repository }}))
           #docker build -t zavolab/${repo_name}:latest .
           #docker tag zavolab/${repo_name}:latest zavolab/${repo_name}:${IMAGE_TAG} 
-          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} 
           #docker push zavolab/${repo_name}:latest
           #docker push zavolab/${repo_name}:${IMAGE_TAG}
