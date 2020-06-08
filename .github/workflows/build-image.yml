@@ -17,8 +17,9 @@ jobs:
           docker_username: ${{ secrets.DOCKER_USERNAME }}
         run: |  
           repo_name=$(cut -f 2 -d "/" <(echo ${{ github.repository }}))
-          docker build -t zavolab/${repo_name}:latest .
-          docker tag zavolab/${repo_name} zavolab/${repo_name}:${IMAGE_TAG}
-          echo $docker_password | docker login -u $docker_username --password-stdin
-          docker push zavolab/${repo_name}:latest
-          docker push zavolab/${repo_name}:${IMAGE_TAG}
+          echo ${IMAGE_TAG}
+          #docker build -t zavolab/${repo_name}:latest .
+          #docker tag zavolab/${repo_name} zavolab/${repo_name}:${IMAGE_TAG}
+          #echo $docker_password | docker login -u $docker_username --password-stdin
+          #docker push zavolab/${repo_name}:latest
+          #docker push zavolab/${repo_name}:${IMAGE_TAG}
