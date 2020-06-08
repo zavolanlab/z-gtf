@@ -20,4 +20,4 @@ jobs:
 
       - name: Build :tag
         if: success()
-        run: docker build -t docker.pkg.github.com/${{ github.repository }}/app:${IMAGE_TAG} .
+        run: echo docker.pkg.github.com #docker build -t docker.pkg.github.com/${{ github.repository }}/app:${IMAGE_TAG} .
