@@ -1,2 +1,5 @@
 tests/__pycache__/
 venv/
+build/
+dist/
+zgtf.egg-info/

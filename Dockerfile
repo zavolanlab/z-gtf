@@ -3,9 +3,7 @@ FROM python:3.8-slim
 
 ##### METADATA #####
 LABEL base.image="python:3.8-slim"
-LABEL version="1"
 LABEL software="zgtf"
-LABEL software.version="0.1"
 LABEL software.description="gtf conversion utlity"
 LABEL software.website="https://github.com/zavolanlab/zgtf"
 LABEL software.documentation="https://github.com/zavolanlab/zgtf"
@@ -24,4 +22,5 @@ COPY setup.py .
 
 ##### INSTALL #####
 RUN apt-get update \
+  && apt-get install -y apt-utils gcc make zlib1g-dev libbz2-dev liblzma-dev libcurl4-openssl-dev \
   && python setup.py install

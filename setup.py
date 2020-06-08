@@ -5,7 +5,7 @@ if sys.version_info < (3, 6):
     sys.exit('Sorry, zgtf requires Python >= 3.6')
 
 requirements = [
-    "htseq>=0.11",
+    "htseq>=0.11"
 ]
 
 setup(
