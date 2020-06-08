@@ -10,16 +10,15 @@ jobs:
     runs-on: ubuntu-latest    
     steps:
       - uses: actions/checkout@v1
-      - name: Build image
+      - name: Build and publish image
         if: success()
         env: 
           docker_password: ${{ secrets.DOCKER_PASSWORD }}
           docker_username: ${{ secrets.DOCKER_USERNAME }}
         run: |  
           repo_name=$(cut -f 2 -d "/" <(echo ${{ github.repository }}))
-          #docker build -t zavolab/${repo_name}:latest .
-          #docker tag zavolab/${repo_name}:latest zavolab/${repo_name}:${IMAGE_TAG} 
+          docker build -t zavolab/${repo_name}:latest .
+          docker tag zavolab/${repo_name}:latest zavolab/${repo_name}:${IMAGE_TAG} 
           echo $docker_password | docker login -u $docker_username --password-stdin
-          cat /home/runner/.docker/config.json
-          #docker push zavolab/${repo_name}:latest
-          #docker push zavolab/${repo_name}:${IMAGE_TAG}
+          docker push zavolab/${repo_name}:latest
+          docker push zavolab/${repo_name}:${IMAGE_TAG}
