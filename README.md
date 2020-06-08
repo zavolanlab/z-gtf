@@ -30,3 +30,27 @@ arguments:
                         Transcript type [Default: protein_coding]
   -v, --verbose         Verbose
   ```
+
+# Docker 
+
+Pull image
+```bash
+docker pull zavolab/zgtf
+```
+
+Run
+```bash
+docker run -it zavolab/zgtf gtf2bed12 --help
+```
+
+# Singularity
+
+Pull image
+```bash
+singularity pull docker://zavolab/zgtf
+```
+
+Run
+```bash
+singularity exec zgtf_latest.sif gtf2bed12 --help
+```
