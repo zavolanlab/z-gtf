@@ -20,4 +20,8 @@ jobs:
 
       - name: Build :tag
         if: success()
-        run: echo docker.pkg.github.com #docker build -t docker.pkg.github.com/${{ github.repository }}/app:${IMAGE_TAG} .
+        run: |  
+          repo_name=$(cut -f 2 -d "/" <(echo ${{ github.repository }}))
+          docker build -t ${repo_name}:latest .
+          docker tag zavolab/${repo_name}:latest zavolab/${repo_name}:${IMAGE_TAG}
+          docker images          
