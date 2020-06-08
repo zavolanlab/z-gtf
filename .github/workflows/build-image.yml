@@ -22,6 +22,6 @@ jobs:
         if: success()
         run: |  
           repo_name=$(cut -f 2 -d "/" <(echo ${{ github.repository }}))
-          docker build -t ${repo_name}:latest .
+          docker build -t zavolab/${repo_name}:latest .
           docker tag zavolab/${repo_name}:latest zavolab/${repo_name}:${IMAGE_TAG}
           docker images          
