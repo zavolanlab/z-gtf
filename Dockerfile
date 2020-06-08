@@ -1,5 +1,5 @@
 ##### BASE IMAGE #####
-FROM python:3.8-slim as build
+FROM python:3.8-slim
 
 ##### METADATA #####
 LABEL base.image="python:3.8-slim"
