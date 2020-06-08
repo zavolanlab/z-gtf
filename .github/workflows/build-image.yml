@@ -17,7 +17,8 @@ jobs:
           docker_username: ${{ secrets.DOCKER_USERNAME }}
         run: |  
           repo_name=$(cut -f 2 -d "/" <(echo ${{ github.repository }}))
-          tag=${GITHUB_REF##*/:1}
+          tag=${GITHUB_REF##*/}
+          tag="${tag:1}"
           echo ${IMAGE_TAG}
           echo ${tag}
           #docker build -t zavolab/${repo_name}:latest .
