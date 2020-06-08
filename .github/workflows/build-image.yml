@@ -20,5 +20,6 @@ jobs:
           #docker build -t zavolab/${repo_name}:latest .
           #docker tag zavolab/${repo_name}:latest zavolab/${repo_name}:${IMAGE_TAG} 
           echo $docker_password | docker login -u $docker_username --password-stdin
+          cat /home/runner/.docker/config.json
           #docker push zavolab/${repo_name}:latest
           #docker push zavolab/${repo_name}:${IMAGE_TAG}
