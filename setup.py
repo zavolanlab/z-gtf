@@ -10,7 +10,7 @@ requirements = [
 
 setup(
     name='zgtf',
-    version='0.1',
+    version='0.1.1',
     description="gtf conversion utility.",
     author="Foivos Gypas",
     author_email='foivos.gypas@unibas.ch',
