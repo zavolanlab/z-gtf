@@ -24,8 +24,9 @@ def gtf_to_transcript_exons(gtf, transcript_type):
                 sys.stderr.write(f"Problem with: {gtf_line}. Exiting.{os.linesep}")
                 sys.exit(1)
 
-            if tr_type != transcript_type:
-                continue
+            if transcript_type != "all":
+                if tr_type != transcript_type:
+                    continue
 
             if tr_id not in transcripts:
                 transcripts[tr_id] = [gtf_line]

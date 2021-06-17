@@ -34,7 +34,7 @@ def main():
     parser.add_argument(
         "--transcript_type",
         dest="transcript_type",
-        help="Transcript type [Default: protein_coding]",
+        help="Transcript type [Default: protein_coding]. Please specify `all` for all transcripts.",
         required=False,
         default="protein_coding"
     )
